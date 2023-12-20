@@ -36,9 +36,15 @@ function App() {
   },[])
   console.log(poke)
   return (
-    <>
-      
-    </>
+    <div>
+      <h1>{poke?.name} </h1>
+      <img src={poke?.sprites.other.home.front_default} alt={poke?.name} />
+      <ul>
+        {poke?.abilities.map((abil, idx) => (
+          <li key={idx}>{abil.ability.name}</li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
